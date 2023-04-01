@@ -1,0 +1,46 @@
+var a = "global";
+{
+  fun showA() {
+    print a;
+  }
+
+  showA();
+  var a = "block";
+  showA();
+}
+
+fun fib(n) {
+		if(n <= 1) return 1;
+		return fib(n - 1) + fib(n - 2);
+}
+
+for(var i = 0; i < 10; i = i + 1) {
+		print fib(i);
+}
+
+class Please {
+		init(left, right) {
+				this.left = left;
+				this.right = right;
+		}
+		serve() {
+				print this.left;
+				print this.right;
+		}
+		inherited() {
+				print "horaaay";
+		}
+}
+
+
+class B < Please {
+		inherited() {
+				super.inherited();
+				print "hooraay x2";
+		}
+}
+
+var a = Please("left", "right");
+a.serve();
+
+B().inherited();
